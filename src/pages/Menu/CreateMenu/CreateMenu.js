@@ -17,7 +17,7 @@ export default function CreateMenu() {
   const route = useRoute();
 
   function handleNavigateDetail() {
-    const fd = {
+    const data = {
       name: name,
       description: description,
       ingredients: ingredients,
@@ -26,7 +26,7 @@ export default function CreateMenu() {
     if (name === "" || description === "" || ingredients === "" || price == null) {
       Alert.alert("Warning", "You should enter the requested information ")
     }else {
-      navigation.navigate('MenuDetailPage', {fd});
+      navigation.navigate('MenuDetailPage', {data});
 
     }
   }
@@ -34,7 +34,9 @@ export default function CreateMenu() {
   return (
     <SafeAreaView>
       <Text style={styles.menu_name}>{route.params.menu.name}</Text>
-      <Input label="Name" onChangeText={value => setName(value)} />
+      <Input 
+        label="Name" 
+        onChangeText={value => setName(value)} />
       <Input
         label="Description"
         onChangeText={value => setDescription(value)}
@@ -43,8 +45,12 @@ export default function CreateMenu() {
         label="Ingredients"
         onChangeText={value => setIngredients(value)}
       />
-      <Input label="Price" onChangeText={value => setPrice(value)} />
-      <Button title="Apply Food" onPress={handleNavigateDetail} />
+      <Input 
+        label="Price" 
+        onChangeText={value => setPrice(value)} />
+      <Button 
+        title="Apply Food" 
+        onPress={handleNavigateDetail} />
     </SafeAreaView>
   );
 }
