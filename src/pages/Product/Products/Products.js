@@ -11,19 +11,13 @@ export default function Products() {
     navigation.navigate('ProductDetailPage', {product: selectedProduct});
   }
 
-  const handleRenderItem = () => {
-    return(
-      ({item}) => (
-      <ProductCard item={item} onSelect={() => navigate(item)} />
-    )
-  )}
-    
-
   return (
     <SafeAreaView>
       <FlatList
         data={mockData.products}
-        renderItem={handleRenderItem}
+        renderItem={ ({item}) => (
+          <ProductCard item={item} onSelect={() => navigate(item)} />
+        )}
       />
     </SafeAreaView>
   );
