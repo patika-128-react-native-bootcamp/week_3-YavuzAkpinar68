@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigation, useRoute} from '@react-navigation/core';
-import {SafeAreaView, Text} from 'react-native';
+import {Alert, SafeAreaView, Text} from 'react-native';
 
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
@@ -9,10 +9,10 @@ import styles from './CreateMenu.styles';
 
 export default function CreateMenu() {
   const navigation = useNavigation();
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const [ingredients, setIngredients] = useState();
-  const [price, setPrice] = useState();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [ingredients, setIngredients] = useState("");
+  const [price, setPrice] = useState(0);
 
   const route = useRoute();
 
@@ -23,8 +23,12 @@ export default function CreateMenu() {
       ingredients: ingredients,
       price: price,
     };
+    if (name === "" || description === "" || ingredients === "" || price == null) {
+      Alert.alert("Warning", "You should enter the requested information ")
+    }else {
+      navigation.navigate('MenuDetailPage', {fd});
 
-    navigation.navigate('MenuDetailPage', {fd});
+    }
   }
 
   return (
