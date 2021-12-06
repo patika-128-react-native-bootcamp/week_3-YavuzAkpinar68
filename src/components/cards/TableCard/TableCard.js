@@ -7,7 +7,7 @@ import {
 
 import styles from './TableCardStyles';
 
-export default function MenuCard({item, onSelect}) {
+export default function TableCard({item, onSelect}) {
   const tableColor = item.isActive ? 'green' : '#bdbdbd';
 
   return (
