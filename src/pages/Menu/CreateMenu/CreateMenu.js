@@ -27,7 +27,6 @@ export default function CreateMenu() {
       Alert.alert("Warning", "You should enter the requested information ")
     }else {
       navigation.navigate('MenuDetailPage', {data});
-
     }
   }
 

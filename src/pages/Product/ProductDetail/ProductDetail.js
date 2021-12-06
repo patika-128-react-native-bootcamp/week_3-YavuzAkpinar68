@@ -24,7 +24,6 @@ export default function ProductDetail() {
         </View>
         <ScrollView horizontal bounces={false}>
           {product.ingredients.map((ingredients, index) => {
-            
             return (
               <View style={styles.badge_container} key={index}>
                 <Text style={styles.badge_label}>{ingredients}</Text>
