@@ -36,18 +36,18 @@ export default function CreateMenu() {
       <Text style={styles.menu_name}>{route.params.menu.name}</Text>
       <Input 
         label="Name" 
-        onChangeText={value => setName(value)} />
+        onChangeText={setName} />
       <Input
         label="Description"
-        onChangeText={value => setDescription(value)}
+        onChangeText={setDescription}
       />
       <Input
         label="Ingredients"
-        onChangeText={value => setIngredients(value)}
+        onChangeText={setIngredients}
       />
       <Input 
         label="Price" 
-        onChangeText={value => setPrice(value)} />
+        onChangeText={setPrice} />
       <Button 
         title="Apply Food" 
         onPress={handleNavigateDetail} />
