@@ -47,7 +47,8 @@ export default function CreateMenu() {
       />
       <Input 
         label="Price" 
-        onChangeText={setPrice} />
+        onChangeText={setPrice}
+        keyboardType="numeric" />
       <Button 
         title="Apply Food" 
         onPress={handleNavigateDetail} />
