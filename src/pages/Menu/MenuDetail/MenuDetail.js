@@ -8,9 +8,9 @@ export default function MenuDetail() {
   const route = useRoute();
   const {data} = route.params;
 
-  const renderIngredients = item => {
+  const renderIngredients = (item, index) => {
     return (
-      <View style={styles.badge_container}>
+      <View style={styles.badge_container} key= {index}>
         <Text style={styles.badge_label}>{item}</Text>
       </View>
     );
@@ -24,7 +24,7 @@ export default function MenuDetail() {
         <Text style={styles.label}>Price: {data.price}</Text>
         <Text style={styles.label}>Ingredients:</Text>
         <View style={styles.ingredients}>
-          {data.ingredients.split(',').map(renderIngredients)}
+          {data.ingredients.split(',').map((item, index) => renderIngredients(item, index))}
         </View>
       </View>
     </SafeAreaView>
