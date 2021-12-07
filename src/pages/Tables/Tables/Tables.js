@@ -1,6 +1,6 @@
 import {useNavigation, useRoute} from '@react-navigation/core';
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
+import {SafeAreaView, FlatList, Alert} from 'react-native';
 
 import styles from './Tables.styles';
 import TableCard from '../../../components/cards/TableCard';
@@ -16,7 +16,7 @@ export default function Table() {
   }
 
   const renderTables = ({item}) => (
-    <TableCard item={item} onSelect={() => handleNavigateTableDetail(item)} />
+    <TableCard item={item} onSelect={() =>  handleNavigateTableDetail(item)} />
   );
 
   useEffect(() => {
