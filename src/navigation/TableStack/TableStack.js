@@ -1,10 +1,10 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
-
 import Tables from '../../pages/Tables/Tables';
 import TableUpdate from '../../pages/Tables/TableUpdate';
+
+const Stack = createNativeStackNavigator();
 
 export default function TableStack() {
   return (
@@ -18,7 +18,7 @@ export default function TableStack() {
             fontWeight: '300',
           },
           headerBackTitleVisible: false,
-          headerTitle: 'Menu',
+          headerTitle: 'Tables',
         }}
       />
       <Stack.Screen
@@ -30,7 +30,7 @@ export default function TableStack() {
             fontWeight: '300',
           },
           headerBackTitleVisible: false,
-          headerTitle: 'Menu',
+          headerTitle: 'Table Detail',
         }}
       />
     </Stack.Navigator>

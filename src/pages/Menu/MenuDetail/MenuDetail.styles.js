@@ -11,9 +11,11 @@ export default StyleSheet.create({
     color: '#8d8d8d',
     fontSize: 12,
     marginVertical: 5,
+    flexWrap: "wrap"
   },
   ingredients: {
     flexDirection: 'row',
+    flexWrap: "wrap"
   },
   badge_container: {
     backgroundColor: '#37474f',
