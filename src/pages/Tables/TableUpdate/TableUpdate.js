@@ -1,6 +1,6 @@
 import {useNavigation, useRoute} from '@react-navigation/core';
 import React from 'react';
-import {SafeAreaView, View, Text, Alert} from 'react-native';
+import {SafeAreaView, View, Text} from 'react-native';
 
 import Button from '../../../components/Button';
 import styles from './TableUpdate.styles';
@@ -21,7 +21,7 @@ export default function TableUpdate() {
   const {table} = route.params;
   
   const total = table.orders.reduce((sum, c) => {
-    return price= sum + c.price
+    return  sum + c.price
   }, 0);
 
   function handleCloseTable() {
